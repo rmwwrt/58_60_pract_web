@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Список собак в приюте">
-    <title>Собаки - Лапки Надежды</title>
+    <meta name="description" content="Питомцы приюта">
+    <title>Питомцы - Лапки Надежды</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,27 +25,20 @@
     <main>
         <nav class="breadcrumbs">
             <div class="container">
-                <a href="index.html">Главная</a> / <a href="pets.html">Питомцы</a> / <span>Собаки</span>
+                <a href="index.html">Главная</a> / <span>Питомцы</span>
             </div>
         </nav>
 
         <section class="page-section">
             <div class="container">
-                <a href="pets.html" class="btn btn-back">← Вернуться назад</a>
-                <h1>Наши собаки</h1>
-                <p class="subtitle">Найдите своего верного друга среди наших собак</p>
+                <a href="index.html" class="btn btn-back">← Вернуться назад</a>
+                <h1>Наши питомцы</h1>
+                <p class="subtitle">Выберите категорию</p>
 
-                <div class="filter">
-                    <label>Возраст:</label>
-                    <select id="age-filter">
-                        <option value="">Все возрасты</option>
-                        <option value="young">Щенки (до 2 лет)</option>
-                        <option value="adult">Взрослые (2-5 лет)</option>
-                        <option value="senior">Пожилые (5+ лет)</option>
-                    </select>
+                <div style="display: flex; gap: 2rem; justify-content: center; margin: 3rem 0;">
+                    <a href="dogs.html" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">🐕 Собаки</a>
+                    <a href="cats.html" class="btn btn-secondary" style="padding: 1rem 2rem; font-size: 1.1rem;">🐱 Кошки</a>
                 </div>
-
-                <div class="pets-grid" id="dogs-grid"></div>
             </div>
         </section>
     </main>
@@ -65,7 +58,8 @@
                     <h4>Навигация</h4>
                     <ul>
                         <li><a href="index.html">Главная</a></li>
-                        <li><a href="pets.html">Питомцы</a></li>
+                        <li><a href="dogs.html">Собаки</a></li>
+                        <li><a href="cats.html">Кошки</a></li>
                         <li><a href="help.html">Как помочь</a></li>
                     </ul>
                 </div>
@@ -77,13 +71,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPets('dog', 'dogs-grid');
-            document.getElementById('age-filter').addEventListener('change', function() {
-                loadPets('dog', 'dogs-grid', this.value);
-            });
-        });
-    </script>
 </body>
 </html>

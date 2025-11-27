@@ -11,11 +11,10 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="logo">🐾 Лапки Надежды</div>
+                <div class="logo">Лапки Надежды</div>
                 <ul class="nav-links">
                     <li><a href="index.html">Главная</a></li>
-                    <li><a href="dogs.html">Собаки</a></li>
-                    <li><a href="cats.html">Кошки</a></li>
+                    <li><a href="pets.html">Питомцы</a></li>
                     <li><a href="help.html">Как помочь</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
@@ -24,7 +23,6 @@
     </header>
 
     <main>
-        <!-- Breadcrumbs -->
         <nav class="breadcrumbs">
             <div class="container">
                 <a href="index.html">Главная</a> / <span>Как помочь</span>
@@ -33,6 +31,7 @@
 
         <section class="page-section">
             <div class="container">
+                <a href="index.html" class="btn btn-back">← Вернуться назад</a>
                 <h1>Как помочь</h1>
                 <p class="subtitle">Есть много способов поддержать наш приют</p>
 
@@ -41,33 +40,80 @@
                         <div class="icon">🤝</div>
                         <h3>Волонтерство</h3>
                         <p>Помогите нам ухаживать за животными, гулять с собаками и помогать в приюте.</p>
-                        <button class="btn btn-primary" onclick="alert('Спасибо за интерес! Свяжитесь с нами по телефону.')">Стать волонтером</button>
+                        <button class="btn btn-primary" onclick="openModal('volunteer')">Стать волонтером</button>
                     </article>
 
                     <article class="help-card">
                         <div class="icon">💝</div>
                         <h3>Пожертвования</h3>
                         <p>Ваши пожертвования помогают нам кормить животных и оплачивать ветеринарные услуги.</p>
-                        <button class="btn btn-primary" onclick="alert('Спасибо за желание помочь! Реквизиты: info@lapki.ru')">Пожертвовать</button>
+                        <button class="btn btn-primary" onclick="openModal('donate')">Пожертвовать</button>
                     </article>
 
                     <article class="help-card">
                         <div class="icon">🍖</div>
                         <h3>Корм и вещи</h3>
                         <p>Помогите нам собрать корм, игрушки, подстилки и другие необходимые вещи.</p>
-                        <button class="btn btn-primary" onclick="alert('Спасибо! Привезите вещи по адресу: ул. Животных, 42')">Отправить помощь</button>
+                        <button class="btn btn-primary" onclick="openModal('supplies')">Отправить помощь</button>
                     </article>
 
                     <article class="help-card">
                         <div class="icon">🏠</div>
                         <h3>Усыновление</h3>
                         <p>Самый лучший способ помочь - дать животному любящий дом.</p>
-                        <a href="dogs.html" class="btn btn-primary">Найти питомца</a>
+                        <a href="pets.html" class="btn btn-primary">Найти питомца</a>
                     </article>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Модальные окна -->
+    <div id="volunteer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('volunteer')">&times;</span>
+            <h2>Волонтерство</h2>
+            <p>Спасибо за интерес к волонтерству!</p>
+            <p><strong>Как присоединиться:</strong></p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Позвоните нам: +7 (999) 123-45-67</li>
+                <li>Напишите на email: info@lapki.ru</li>
+                <li>Приходите в приют: ул. Животных, 42</li>
+            </ul>
+            <p>Мы рады каждому волонтеру!</p>
+        </div>
+    </div>
+
+    <div id="donate-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('donate')">&times;</span>
+            <h2>Пожертвования</h2>
+            <p>Спасибо за желание помочь!</p>
+            <p><strong>Способы пожертвования:</strong></p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Карта: 1234 5678 9012 3456</li>
+                <li>Email: donate@lapki.ru</li>
+                <li>Телефон: +7 (999) 123-45-67</li>
+            </ul>
+            <p>Каждое пожертвование помогает спасать жизни!</p>
+        </div>
+    </div>
+
+    <div id="supplies-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('supplies')">&times;</span>
+            <h2>Отправить помощь</h2>
+            <p>Спасибо за помощь!</p>
+            <p><strong>Что нам нужно:</strong></p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li>Сухой и влажный корм</li>
+                <li>Игрушки и мячи</li>
+                <li>Подстилки и одеяла</li>
+                <li>Ошейники и поводки</li>
+            </ul>
+            <p><strong>Адрес доставки:</strong> г. Москва, ул. Животных, 42</p>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -84,8 +130,7 @@
                     <h4>Навигация</h4>
                     <ul>
                         <li><a href="index.html">Главная</a></li>
-                        <li><a href="dogs.html">Собаки</a></li>
-                        <li><a href="cats.html">Кошки</a></li>
+                        <li><a href="pets.html">Питомцы</a></li>
                         <li><a href="help.html">Как помочь</a></li>
                     </ul>
                 </div>
@@ -97,5 +142,22 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        function openModal(type) {
+            const modalId = type + '-modal';
+            document.getElementById(modalId).style.display = 'block';
+        }
+
+        function closeModal(type) {
+            const modalId = type + '-modal';
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>

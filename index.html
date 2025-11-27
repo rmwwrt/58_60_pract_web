@@ -11,10 +11,9 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="logo">🐾 Лапки Надежды</div>
+                <div class="logo">Лапки Надежды</div>
                 <ul class="nav-links">
-                    <li><a href="dogs.html">Собаки</a></li>
-                    <li><a href="cats.html">Кошки</a></li>
+                    <li><a href="pets.html">Питомцы</a></li>
                     <li><a href="help.html">Как помочь</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
@@ -23,28 +22,25 @@
     </header>
 
     <main>
-        <!-- Breadcrumbs -->
         <nav class="breadcrumbs">
             <div class="container">
                 <span>Главная</span>
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
                     <h1>Помоги найти <span>дом</span></h1>
                     <p>Каждый питомец ждет своего человека. Собаки и кошки готовы подарить вам безусловную любовь.</p>
                     <div class="hero-buttons">
-                        <a href="dogs.html" class="btn btn-primary">Собаки</a>
-                        <a href="cats.html" class="btn btn-secondary">Кошки</a>
+                        <a href="pets.html" class="btn btn-primary">Питомцы</a>
+                        <a href="help.html" class="btn btn-secondary">Как помочь</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- О приюте -->
         <section class="about">
             <div class="container">
                 <h2>О нашем приюте</h2>
@@ -68,7 +64,6 @@
             </div>
         </section>
 
-        <!-- Избранные питомцы -->
         <section class="featured">
             <div class="container">
                 <h2>Наши питомцы</h2>
@@ -81,12 +76,11 @@
                     <div class="carousel-dots" id="carousel-dots"></div>
                 </div>
                 <div class="text-center" style="margin-top: 2rem;">
-                    <a href="dogs.html" class="btn btn-primary">Смотреть всех питомцев</a>
+                    <a href="pets.html" class="btn btn-primary">Смотреть всех питомцев</a>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
         <section class="cta">
             <div class="container">
                 <h2>Хотите помочь?</h2>
@@ -110,9 +104,9 @@
                 <div class="footer-section">
                     <h4>Навигация</h4>
                     <ul>
-                        <li><a href="dogs.html">Собаки</a></li>
-                        <li><a href="cats.html">Кошки</a></li>
+                        <li><a href="pets.html">Питомцы</a></li>
                         <li><a href="help.html">Как помочь</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,18 +119,22 @@
     <script src="js/main.js"></script>
     <script>
         let currentSlide = 0;
-        const pets = [
+        const allPets = [
             { id: 1, name: 'Бублик', type: 'dog', age: 24, breed: 'Лабрадор', image: '🐕' },
             { id: 2, name: 'Луна', type: 'dog', age: 36, breed: 'Хаски', image: '🐕' },
+            { id: 3, name: 'Макс', type: 'dog', age: 12, breed: 'Немецкая овчарка', image: '🐕' },
+            { id: 4, name: 'Рекс', type: 'dog', age: 48, breed: 'Бульдог', image: '🐕' },
             { id: 5, name: 'Мурка', type: 'cat', age: 18, breed: 'Британская', image: '🐱' },
-            { id: 6, name: 'Барсик', type: 'cat', age: 24, breed: 'Рыжий табби', image: '🐱' }
+            { id: 6, name: 'Барсик', type: 'cat', age: 24, breed: 'Рыжий табби', image: '🐱' },
+            { id: 7, name: 'Снежка', type: 'cat', age: 12, breed: 'Белая персидская', image: '🐱' },
+            { id: 8, name: 'Тигра', type: 'cat', age: 6, breed: 'Полосатый табби', image: '🐱' }
         ];
 
         function initCarousel() {
             const container = document.getElementById('carousel-items');
             const dots = document.getElementById('carousel-dots');
             
-            container.innerHTML = pets.map((pet, i) => `
+            container.innerHTML = allPets.map((pet, i) => `
                 <div class="carousel-item ${i === 0 ? 'active' : ''}">
                     <div class="icon">${pet.image}</div>
                     <h3>${pet.name}</h3>
@@ -146,7 +144,7 @@
                 </div>
             `).join('');
 
-            dots.innerHTML = pets.map((_, i) => `
+            dots.innerHTML = allPets.map((_, i) => `
                 <div class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></div>
             `).join('');
         }

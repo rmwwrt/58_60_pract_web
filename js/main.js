@@ -78,7 +78,7 @@ function loadPetDetail(id) {
                         ${pet.character.split(', ').map(c => `<span class="tag">${c}</span>`).join('')}
                     </div>
                 </div>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1rem;">❤️ Хочу помочь этому питомцу</button>
+                <a href="help.html" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 1rem; display: block; text-align: center;">❤️ Хочу помочь этому питомцу</a>
                 <a href="help.html" class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem; padding: 1rem; text-align: center; display: block;">Узнать как помочь</a>
             </div>
         </div>
