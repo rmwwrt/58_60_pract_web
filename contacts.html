@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакты приюта">
+    <title>Контакты - Лапки Надежды</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🐾 Лапки Надежды</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="dogs.html">Собаки</a></li>
+                    <li><a href="cats.html">Кошки</a></li>
+                    <li><a href="help.html">Как помочь</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a> / <span>Контакты</span>
+            </div>
+        </nav>
+
+        <section class="page-section">
+            <div class="container">
+                <h1>Контакты</h1>
+
+                <div class="contacts-grid">
+                    <aside class="contacts-info">
+                        <h3>Информация о приюте</h3>
+                        <div class="info-item">
+                            <strong>📍 Адрес:</strong>
+                            <p>г. Москва<br>ул. Животных, 42<br>Здание 3, 2 этаж</p>
+                        </div>
+                        <div class="info-item">
+                            <strong>📞 Телефон:</strong>
+                            <p><a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>📧 Email:</strong>
+                            <p><a href="mailto:info@lapki.ru">info@lapki.ru</a></p>
+                        </div>
+                        <div class="info-item">
+                            <strong>🕐 Время работы:</strong>
+                            <p>Пн-Вс: 10:00 - 18:00<br>Обеденный перерыв: 13:00 - 14:00</p>
+                        </div>
+                    </aside>
+
+                    <section class="contact-form-section">
+                        <h3>Форма обратной связи</h3>
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Имя *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                        <div id="form-message" style="display:none; margin-top: 10px; padding: 10px; background: #d4edda; color: #155724; border-radius: 4px;"></div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>О приюте</h4>
+                    <p>Приют для животных, помогающий найти дом каждому питомцу.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>📞 +7 (999) 123-45-67<br>📧 info@lapki.ru<br>📍 г. Москва, ул. Животных, 42</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="dogs.html">Собаки</a></li>
+                        <li><a href="cats.html">Кошки</a></li>
+                        <li><a href="help.html">Как помочь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Лапки Надежды. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const message = document.getElementById('form-message');
+            message.textContent = '✓ Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.';
+            message.style.display = 'block';
+            form.reset();
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Список собак в приюте">
+    <title>Собаки - Лапки Надежды</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">🐾 Лапки Надежды</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="dogs.html">Собаки</a></li>
+                    <li><a href="cats.html">Кошки</a></li>
+                    <li><a href="help.html">Как помочь</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <nav class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Главная</a> / <span>Собаки</span>
+            </div>
+        </nav>
+
+        <section class="page-section">
+            <div class="container">
+                <h1>Наши собаки</h1>
+                <p class="subtitle">Найдите своего верного друга</p>
+
+                <div class="filter">
+                    <label>Возраст:</label>
+                    <select id="age-filter">
+                        <option value="">Все возрасты</option>
+                        <option value="young">Щенки (до 2 лет)</option>
+                        <option value="adult">Взрослые (2-5 лет)</option>
+                        <option value="senior">Пожилые (5+ лет)</option>
+                    </select>
+                </div>
+
+                <div class="pets-grid" id="dogs-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>О приюте</h4>
+                    <p>Приют для животных, помогающий найти дом каждому питомцу.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>📞 +7 (999) 123-45-67<br>📧 info@lapki.ru<br>📍 г. Москва, ул. Животных, 42</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="dogs.html">Собаки</a></li>
+                        <li><a href="cats.html">Кошки</a></li>
+                        <li><a href="help.html">Как помочь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Лапки Надежды. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPets('dog', 'dogs-grid');
+            document.getElementById('age-filter').addEventListener('change', function() {
+                loadPets('dog', 'dogs-grid', this.value);
+            });
+        });
+    </script>
+</body>
+</html>
